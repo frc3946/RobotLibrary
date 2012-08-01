@@ -1,0 +1,41 @@
+#######################################
+# Syntax Coloring Map RobotLibrary
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Controller	KEYWORD1
+Spike	KEYWORD1
+SpeedController	KEYWORD1
+DriveTrain	KEYWORD1
+SprinklerValve	KEYWORD1
+	
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+update	KEYWORD2
+getR1	KEYWORD2
+getR2	KEYWORD2
+getL1	KEYWORD2
+getL2	KEYWORD2
+getRX	KEYWORD2
+getRY	KEYWORD2
+getLX	KEYWORD2
+getLY	KEYWORD2
+getSpeed	KEYWORD2
+setSpeed	KEYWORD2
+setForward	KEYWORD2
+setReverse	KEYWORD2
+setOff	KEYWORD2
+getState	KEYWORD2
+openValve	KEYWORD2
+closeValve	KEYWORD2
+shootValve	KEYWORD2
+getState	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
