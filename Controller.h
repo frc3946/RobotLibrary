@@ -44,6 +44,7 @@ class Controller {
     bool getR2();
     bool getL1();
     bool getL2();
+    bool getUp();
   //Analog
     short getRX();
     short getRY();
@@ -61,6 +62,7 @@ class Controller {
     short RYPin;
     short LXPin;
     short LYPin;
+    short UpPin;
     const static int sampleNum = 1; //there is always just one sample
 };
 #endif
