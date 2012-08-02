@@ -9,7 +9,7 @@
 Controller	KEYWORD1
 Spike	KEYWORD1
 SpeedController	KEYWORD1
-DriveTrain	KEYWORD1
+Drivetrain	KEYWORD1
 SprinklerValve	KEYWORD1
 	
 #######################################

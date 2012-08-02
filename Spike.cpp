@@ -2,7 +2,7 @@
 
 Spike::Spike(short forwardPin, short reversePin) {
   _forwardPin = forwardPin;
-  _reversePin = _reversePin;
+  _reversePin = reversePin;
   pinMode(_forwardPin, OUTPUT);
   pinMode(_reversePin, OUTPUT);
   //setOff();
@@ -21,14 +21,14 @@ void Spike::setForward() {
   state = 1;
 }
 
-short Spike::getState() {
-  return(state);
-}
-
 void Spike::setReverse() {
   digitalWrite(_forwardPin, LOW);
   digitalWrite(_reversePin, HIGH);
   state = -1;
+}
+
+short Spike::getState() {
+  return(state);
 }
 
 

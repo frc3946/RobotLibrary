@@ -50,8 +50,8 @@ class Controller {
     short getLX();
     short getLY();
   private:
-    XBee xbee;
-    Rx64IoSampleResponse ioSample;
+    XBee *xbee;
+    Rx64IoSampleResponse *ioSample;
   //Pins
     short R1Pin;
     short R2Pin;
