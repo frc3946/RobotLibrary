@@ -4,14 +4,15 @@ Controller::Controller() {
   xbee = new XBee();
   ioSample = new Rx64IoSampleResponse();
   xbee->begin(115200);
-  R1Pin = 1;
-  R2Pin = 1;
-  L1Pin = 1;
-  L2Pin = 1;
-  RXPin = 1;
-  RYPin = 1;
-  LXPin = 1;
-  LYPin = 1;
+  R1Pin = 18;  //DIO2
+  R2Pin = 20;  //DIO0
+  L1Pin = 16;  //DIO6
+  L2Pin = 19;  //DIO1
+  RXPin = 15;  //DIO5
+  RYPin = 17;  //DIO3
+  LXPin = null;
+  LYPin = 11;  //DIO4
+  UpPin = 12;  //DIO7
 }
 
 void Controller::update() {
@@ -42,6 +43,9 @@ bool Controller::getL1() {
 }
 bool Controller::getL2() {
   return !ioSample->isDigitalOn(L2Pin,sampleNum);
+}
+bool Controller::getUp() {
+  return !ioSample->isDigitalOn(UpPin,sampleNum);
 }
 
 short Controller::getRX() {
