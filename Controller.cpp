@@ -10,7 +10,7 @@ Controller::Controller() {
   L2Pin = 19;  //DIO1
   RXPin = 15;  //DIO5
   RYPin = 17;  //DIO3
-  LXPin = 0;
+  LXPin = 0;   //Pin net set
   LYPin = 11;  //DIO4
   UpPin = 12;  //DIO7
 }
