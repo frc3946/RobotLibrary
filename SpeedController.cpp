@@ -2,11 +2,10 @@
 
 SpeedController::SpeedController(short pin) {
   _pin = pin;
-  pinMode(_pin, OUTPUT);
-  //servo = new Servo();
+  pinMode(_pin, OUTPUT);ar
   servo.attach(_pin);
-  servo.writeMicroseconds(1500);
   speed = 0;
+  setSpeed(speed);
 }
 
 void SpeedController::setSpeed(short newSpeed) {
@@ -14,7 +13,7 @@ void SpeedController::setSpeed(short newSpeed) {
     speed = newSpeed;
   } else {
     speed = 0; //Sets to OFF
-    Serial.println("Jaguar: Input Out Of Range");
+    Serial.println("SpeedController: Input Out Of Range");
   }
   servo.writeMicroseconds(map(speed,-100, 100, 1000, 2000));
 }

@@ -35,6 +35,8 @@ openValve	KEYWORD2
 closeValve	KEYWORD2
 shootValve	KEYWORD2
 getState	KEYWORD2
+tankDrive	KEYWORD2
+arcadeDrive	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
