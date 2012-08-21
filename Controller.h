@@ -63,6 +63,8 @@ class Controller {
     short LXPin;
     short LYPin;
     short UpPin;
-    const static int sampleNum = 1; //there is always just one sample
+    const static int sampleNum = 0; //there is always just one sample (numbered 0)
+    short error; // Number of missed packets. if 1-3 values are kept what they were before, if more values set to neutrals.
+    short potCenter;
 };
 #endif

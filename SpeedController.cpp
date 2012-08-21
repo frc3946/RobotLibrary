@@ -2,7 +2,7 @@
 
 SpeedController::SpeedController(short pin) {
   _pin = pin;
-  pinMode(_pin, OUTPUT);ar
+  pinMode(_pin, OUTPUT);
   servo.attach(_pin);
   speed = 0;
   setSpeed(speed);
