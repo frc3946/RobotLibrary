@@ -13,7 +13,7 @@ void SpeedController::setSpeed(short newSpeed) {
     speed = newSpeed;
   } else {
     speed = 0; //Sets to OFF
-    Serial.println("SpeedController: Input Out Of Range");
+    //Serial.println("SpeedController: Input Out Of Range");
   }
   servo.writeMicroseconds(map(speed,-100, 100, 1000, 2000));
 }

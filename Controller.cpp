@@ -22,23 +22,23 @@ void Controller::update() {
     if (xbee->getResponse().getApiId() == RX_64_IO_RESPONSE) { //validity check
       xbee->getResponse().getRx64IoSampleResponse(*ioSample);
       error = 0;
-      Serial.println("WE ARE GOOD!");
+      //Serial.println("WE ARE GOOD!");
       if(potCenter == -101) {
         potCenter = (getRX() + getRY() + getLX() + getLY())/4;
       }
     }
     else {
-      Serial.print("Expected I/O Sample, but got ");
-      Serial.println(xbee->getResponse().getApiId(), HEX);
+      //Serial.print("Expected I/O Sample, but got ");
+      //Serial.println(xbee->getResponse().getApiId(), HEX);
       error++;
     }
   }
   else if (xbee->getResponse().isError()) {
-    Serial.print("Error reading packet.  Error code: ");
-    Serial.println(xbee->getResponse().getErrorCode());
+    //Serial.print("Error reading packet.  Error code: ");
+    //Serial.println(xbee->getResponse().getErrorCode());
     error++;
   } else {
-  	Serial.println("Um... Why is this here? No packet and no error?");
+  	//Serial.println("Um... Why is this here? No packet and no error?");
   	error++;
   }
 }
