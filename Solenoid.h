@@ -1,8 +1,7 @@
 /*
 ||
-||
 || @description
-|| | Control a Speed Controller (victor or jaguar)
+|| | Control a Solenoid Pnumatic Valve
 || #
 ||
 || @author
@@ -27,24 +26,24 @@
 ||
 */
 
-
-#ifndef JAGUAR_H
-#define JAGUAR_H
+#ifndef SOLENOID_H
+#define SOLENOID_H
 
 #include "Arduino.h"
-#include <Servo.h>
+#include "Spike.h"
 
-class SpeedController {
+class Solenoid {
   public:
-    SpeedController();
-    SpeedController(short pin);
-    void attach(short pin);
-    void setSpeed(short newSpeed);
-    short getSpeed();
+    Solenoid();
+    Solenoid(short forwardPin, short reversePin);
+    void attach(short forwardPin, short reversePin);
+    void openValve();
+    void closeValve();
+    void shootValve(int length);
+    bool getState();
   private:
-    short speed;
-    short _pin;
+    Spike *valve;
+    bool state;
     bool attached;
-    Servo servo;
 };
 #endif

@@ -9,14 +9,15 @@
 Controller	KEYWORD1
 Spike	KEYWORD1
 SpeedController	KEYWORD1
-Drivetrain	KEYWORD1
 SprinklerValve	KEYWORD1
+Solenoid	KEYWORD1
 	
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
 update	KEYWORD2
+attach	KEYWORD2
 getR1	KEYWORD2
 getR2	KEYWORD2
 getL1	KEYWORD2

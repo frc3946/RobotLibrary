@@ -13,7 +13,8 @@ Controller::Controller() {
   LXPin = 0;  //Pin not set
   LYPin = 4;  //DIO4
   UpPin = 7;  //DIO7
-  potCenter = -101;
+  update();
+  potCenter = 0;
 }
 
 void Controller::update() {

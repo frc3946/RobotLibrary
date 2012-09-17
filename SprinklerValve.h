@@ -34,7 +34,9 @@
 
 class SprinklerValve {
   public:
+    SprinklerValve();
     SprinklerValve(short forwardPin, short reversePin);
+    void attach(short forwardPin, short reversePin);
     void openValve();
     void closeValve();
     void shootValve(int length);
@@ -42,5 +44,6 @@ class SprinklerValve {
   private:
     Spike *valve;
     bool state;
+    bool attached;
 };
 #endif

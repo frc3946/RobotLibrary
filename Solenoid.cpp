@@ -1,42 +1,38 @@
-#include "SprinklerValve.h"
+#include "Solenoid.h"
 
-SprinklerValve::SprinklerValve() {
+Solenoid::Solenoid() {
   attached = false;
 }
 
-SprinklerValve::SprinklerValve(short forwardPin, short reversePin) {
+Solenoid::Solenoid(short forwardPin, short reversePin) {
   valve = new Spike(forwardPin, reversePin);
   attached = true;
   closeValve();
   state = false;
 }
 
-void SprinklerValve::attach(short forwardPin, short reversePin) {
+void Solenoid::attach(short forwardPin, short reversePin) {
   valve = new Spike(forwardPin, reversePin);
   attached = true;
   closeValve();
   state = false;
 }
 
-void SprinklerValve::openValve() {
+void Solenoid::openValve() {
   if(attached == true) {
     valve->setForward();
-    delay(10);
-    valve->setOff();
     state = true;
   }
 }
 
-void SprinklerValve::closeValve() {
+void Solenoid::closeValve() {
   if(attached == true) {
-    valve->setReverse();
-    delay(10);
     valve->setOff();
     state = false;
   }
 }
 
-void SprinklerValve::shootValve(int length) {
+void Solenoid::shootValve(int length) {
   if(attached == true) {
     openValve();
     delay(length);
@@ -44,7 +40,7 @@ void SprinklerValve::shootValve(int length) {
   }
 }
 
-bool SprinklerValve::getState() {
+bool Solenoid::getState() {
   if(attached == true) {
     return state;
   } else {

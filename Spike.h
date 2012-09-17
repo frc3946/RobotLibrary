@@ -33,7 +33,9 @@
 
 class Spike {
   public:
+    Spike();
     Spike(short forwardPin, short reversePin);
+    void attach(short forwardPin, short reversePin);
     void setForward();
     void setReverse();
     void setOff();
@@ -42,5 +44,6 @@ class Spike {
     short _forwardPin;
     short _reversePin;
     short state;
+    bool attached;
 };
 #endif
