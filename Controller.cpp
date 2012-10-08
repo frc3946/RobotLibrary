@@ -4,15 +4,16 @@ Controller::Controller() {
   xbee = new XBee();
   ioSample = new Rx64IoSampleResponse();
   xbee->begin(115200);
-  R1Pin = 2;  //DIO2
-  R2Pin = 0;  //DIO0
-  L1Pin = 6;  //DIO6
-  L2Pin = 1;  //DIO1
-  RXPin = 5;  //DIO5
-  RYPin = 3;  //DIO3
-  LXPin = 0;  //Pin not set
-  LYPin = 4;  //DIO4
-  UpPin = 7;  //DIO7
+  R1Pin = 6;  //Pin 16
+  R2Pin = 4;  //Pin 11
+  R3Pin;      //Pin Not Set
+  L1Pin = 5;  //Pin 15
+  L2Pin = 7;  //Pin 12
+  L3Pin;      //Pin Not set
+  RXPin = 2;  //Pin 18
+  RYPin = 3;  //Pin 17
+  LXPin = 1;  //Pin 19
+  LYPin = 0;  //Pin 20
   update();
   potCenter = 0;
 }
@@ -73,13 +74,13 @@ bool Controller::getL2() {
   }
   
 }
-bool Controller::getUp() {
-  if(error == 0) {
-    return !ioSample->isDigitalOn(UpPin,sampleNum);
-  } else {
-    return false;
-  }
-}
+//bool Controller::getL3() {
+//  if(error == 0) {
+//    return !ioSample->isDigitalOn(L3Pin,sampleNum);
+//  } else {
+//    return false;
+//  }
+//}
 
 short Controller::getRX() {
   static short RXprev = potCenter;
