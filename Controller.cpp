@@ -4,14 +4,16 @@ Controller::Controller() {
   xbee = new XBee();
   ioSample = new Rx64IoSampleResponse();
   xbee->begin(115200);
-  R1Pin = 6;  //DIO6	Safety
-  R2Pin = 4;  //DIO4	Fire Right Cannon
-  L1Pin = 5;  //DIO5	
-  L2Pin = 7;  //DIO7	
-  RXPin = 2;  //DIO2	
-  RYPin = 3;  //DIO3	Right Drive
-  LXPin = 1;  //DIO1	Height Adjust (Right-UP, Left-DOWN)
-  LYPin = 0;  //DIO0	Left Drive
+  R1Pin = 6;  //Pin 16
+  R2Pin = 4;  //Pin 11
+  R3Pin;      //Pin Not Set
+  L1Pin = 5;  //Pin 15
+  L2Pin = 7;  //Pin 12
+  L3Pin;      //Pin Not set
+  RXPin = 2;  //Pin 18
+  RYPin = 3;  //Pin 17
+  LXPin = 1;  //Pin 19
+  LYPin = 0;  //Pin 20
   update();
   potCenter = 0;
 }
@@ -72,6 +74,16 @@ bool Controller::getL2() {
   }
   
 }
+<<<<<<< HEAD
+=======
+//bool Controller::getL3() {
+//  if(error == 0) {
+//    return !ioSample->isDigitalOn(L3Pin,sampleNum);
+//  } else {
+//    return false;
+//  }
+//}
+>>>>>>> d67b2e5674d08b47cdf1af47128628c2541e2589
 
 short Controller::getRX() {
   static short RXprev = potCenter;
